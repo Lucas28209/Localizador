@@ -1,4 +1,3 @@
-
 <?php
 
 require_once('conexao.php');
@@ -10,21 +9,28 @@ $senha = $_POST['senha'];
 $email = $_POST['email'];
 $telefone = $_POST['telefone'];
 
-echo $tipo;
-echo $nome;
-echo $senha;
-echo $email;
-echo $telefone;
-
 $sql = "INSERT INTO usuario (tipo_usuario, nome_usuario, senha, email, telefone)
     VALUES ('$tipo', '$nome', '$senha', '$email', '$telefone')";
 
-echo $sql;
+//echo $sql;
 
-if(mysqli_query($conexao, $sql)){
-    echo "Usuário cadastrado com sucesso";
+
+if(!mysqli_query($conexao, $sql)){
+    echo("Error description: " . mysqli_error($conexao));
+    echo " <script>
+    
+    alert('Falha no cadastro');
+    
+    </script>";
+
 }else{
-    echo "Erro: " . mysqli_connect_error($conexao);
+
+    echo "  <script>
+
+    alert('Usuário cadastrado com sucesso');
+    window.location.href = 'index.html';
+
+    </script>";
 }
 
 mysqli_close($conexao);

@@ -5,7 +5,17 @@ pre, form, fieldset, input, textarea, p, blockquote, th, td {
 
 fieldset, img {border:0}
 
-ol, ul, li {list-style:none}
+
+li {
+  list-style: none;
+  background: #3a57af;
+  color: rgb(0, 0, 0);
+  padding: 25px;
+  margin-left: 18px;
+  margin-right: 18px;
+  text-align: center;
+}
+
 
 :focus {outline:none}
 
@@ -16,6 +26,14 @@ select {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #4c4c4c;
+}
+
+a {
+  color: blue;
+    padding: 9px;
+    margin: 20px;
+    margin-left: 10;
+    float: left;
 }
 
 p {
@@ -108,6 +126,22 @@ hr{
   opacity: 0.3;
 }
 
+input[type=number]{
+    width: 200px;
+    height: 39px;
+    -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+    -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;
+    border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 2px 5px rgb(0 0 0 / 9%);
+    -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+    box-shadow: 1px 2px 5px rgb(0 0 0 / 9%);
+    border: solid 1px #cbc9c9;
+    margin-left: -5px;
+    margin-top: 13px;
+    padding-left: 10px;
+
+}
 input[type=text],input[type=password]{
   width: 200px; 
   height: 39px; 
@@ -149,15 +183,16 @@ input[type=password]{
   margin-top: 20px;
 }
 
-a.button {
+a.button, button {
   font-size: 14px;
   font-weight: 600;
   color: white;
-  padding: 6px 25px 0px 10px;
-  margin: 10px 8px 20px 80px;
-  
+  padding: 0px 25px 0px 10px;
+  margin: 10px 8px 20px 0px;
+  display: inline-block;
+  float: right;
   text-decoration: none;
-  width: 50px; height: 27px; 
+  width: 70px; height: 27px; 
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
   border-radius: 5px; 
@@ -166,12 +201,13 @@ a.button {
   -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
   box-shadow: 0 3px rgba(58,87,175,.75);
   transition: all 0.1s linear 0s; 
-  top: 19px;
+  top: 0px;
   position: relative;
 }
 
-a.button:hover {
+button, a.button:hover {
   top: 3px;
+  width: 90px;
   background-color:#2e458b;
   -webkit-box-shadow: none; 
   -moz-box-shadow: none; 

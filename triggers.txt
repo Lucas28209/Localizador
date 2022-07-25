@@ -1,0 +1,19 @@
+DELIMITER $$
+
+CREATE TRIGGER verifica_email
+BEFORE INSERT
+ON usuario FOR EACH ROW
+BEGIN
+    DECLARE rowcount INT;
+    
+    SELECT COUNT(email) 
+    INTO rowcount
+    FROM usuario where email=(new.email);
+    
+    IF rowcount > 0 THEN
+        UPDATE WorkCenterStats
+        SET totalCapacity = totalCapacity;
+    END IF; 
+END $$
+
+DELIMITER ;

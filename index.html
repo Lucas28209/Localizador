@@ -1,17 +1,78 @@
-<link href="cadastro.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="cadastro.css" rel="stylesheet">
+    <style>
+      button, a.button:hover {  
+        top: 3px;
+        width: 90px;
+        background-color:#2e458b;
+        -webkit-box-shadow: none; 
+        -moz-box-shadow: none; 
+        box-shadow: none;
+       }
+      
+      a.button, button {
+          font-size: 14px;
+          font-weight: 600;
+          color: white;        
+          padding: 0px 25px 0px 10px;  
+          margin: 10px 8px 20px 0px;
+          display: inline-block;
+          float: right;
+          text-decoration: none;
+          width: 90px; height: 27px; 
+          -webkit-border-radius: 5px; 
+          -moz-border-radius: 5px; 
+          border-radius: 5px; 
+          background-color: #3a57af; 
+          -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
+          -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
+          box-shadow: 0 3px rgba(58,87,175,.75);
+          transition: all 0.1s linear 0s; 
+          top: 0px;
+          position: relative;
+        }
 
-<div class="testbox">
-  <h1>Login</h1>
+      a {
+        color: blue;
+        color: blue;
+        padding: 12px;
+        margin: 22px;
+      }
 
-  <form method="POST" action="login.php">
-    <hr>
-    <label id="icon" for="name"><i class="icon-envelope "></i></label>
-    <input type="text" name="name" id="name" placeholder="Email" required />
-    <label id="icon" for="name"><i class="icon-shield"></i></label>
-    <input type="password" name="senha" id="senha" placeholder="Senha" required />
-    <a href="#" class="button">Confirmar</a>
-    <p> Ainda não se registrou? 
-    <a href="cadastro.html">Registre-se</a>
-    </p>
-  </form>
-</div>
+      p {
+        font-size: 15px;
+        width: 169px;
+        display: inline-block;
+        margin-left: 61px;
+      }
+      
+    </style>
+    </head>
+       
+     <div class="testbox">
+      <h1>Login</h1>
+      <form method="POST" action="login.php">
+        <hr>
+        <label id="icon" for="nome"><i class="icon-envelope "></i></label>
+        <input type="text" name="email" id="name" placeholder="Email" required />
+        <label id="icon" for="nome"><i class="icon-shield"></i></label>
+        <input type="password" name="senha" id="senha" placeholder="Senha" required />
+        <button>Confirmar</button>   
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <p> Ainda não se registrou? 
+        <a href="cadastro.html">Registre-se</a>
+        </p>
+      </form>
+    </div>
+</html>
+
