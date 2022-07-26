@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="cadastro.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <style>
+            a {
+                color: blue;
+                padding: 2px;
+                margin: 14px;
+                margin-left: 35px;
+                float: left;
+                } 
+            
+            a.button, button {
+                font-size: 14px;
+                font-weight: 600;
+                color: white;
+                padding: 0px 25px 0px 10px;
+                margin: 10px 8px 20px 0px;
+                display: inline-block;
+                float: left;
+                text-decoration: none;
+                width: 70px; height: 27px; 
+                -webkit-border-radius: 5px; 
+                -moz-border-radius: 5px; 
+                border-radius: 5px; 
+                background-color: #3a57af; 
+                -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
+                -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
+                box-shadow: 0 3px rgba(58,87,175,.75);
+                transition: all 0.1s linear 0s; 
+                top: 0px;
+                position: relative;
+                margin-left: 14px;
+                }
+
+                button, a.button:hover {
+                top: 0;
+                width: 90px;
+                background-color:#2e458b;
+                -webkit-box-shadow: none; 
+                -moz-box-shadow: none; 
+                box-shadow: none;
+                
+                }
+
+        </style>
+    </head>
+    <div class="testbox">
+        <h1>Procurar Item</h1>
+        <form method="" action="">
+          <hr>
+          <label id="icon" for="name"><i class="icon-envelope "></i></label>
+          <input type="text" name="nome" id="nome" placeholder="Nome do item" required />
+      
+          <label id="icon" for="name"><i class="icon-envelope "></i></label>
+          <input type="text" name="tipo" id="tipo" placeholder="Tipo do item" required />
+          <button>Procurar</button> 
+        </form>
+        <br> <br> <br> <hr>
+          
+        <h1>Procurar Estabelecimento</h1>
+          <form>
+              <hr>
+              <label id="icon" for="name"><i class="icon-envelope "></i></label>
+              <input type="text" name="estabe" id="estabe" placeholder="Nome do estabelecimento" required />
+              <button>Procurar</button> 
+          </form>  
+      </div>
+
+    <!--<a href="principal_cliente.php">Voltar</a>!-->
+</html>
+
+
+
+  <!--
+        <h1>Procurar Produto</h1>
+    <div class="testbox">
+        <form method="POST" action="procurarProduto.php">
+        <label for="nome">Nome do Produto:</label>
+        <input type="text" name="nome" id="name" required />
+        <button>Procurar</button>
+        </form>
+    </div>
+  -->
