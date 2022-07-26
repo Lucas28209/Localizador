@@ -14,7 +14,6 @@ $estabelecimento = $_POST['estabelecimento'];
 
     <thead>
         <tr>
-        <th>Id</th>
         <th>Nome</th>
         <th>Tipo</th>
         <th>Horário de Abertura</th>
@@ -30,7 +29,10 @@ $estabelecimento = $_POST['estabelecimento'];
     <?php
     require_once('conexao.php');
 
-    $sql = mysqli_query($conexao, "SELECT * FROM estabelecimento where nome='$estabelecimento'");
+    $sql = mysqli_query($conexao, "SELECT estabelecimento.nome, estabelecimento.tipo, estabelecimento.hora_abre, estabelecimento.hora_fecha, 
+    endereco.rua, endereco.bairro, endereco.numero, endereco.cidade
+     FROM estabelecimento inner join endereco on estabelecimento.id_estabelecimento = endereco.id_estabelecimento 
+    where nome='$estabelecimento'");
 
     while($dados = mysqli_fetch_array($sql)) {
         ?>
@@ -44,8 +46,6 @@ $estabelecimento = $_POST['estabelecimento'];
         <td> <?= $dados[5] ?> </td>
         <td> <?= $dados[6] ?> </td>
         <td> <?= $dados[7] ?> </td>
-        <td> <?= $dados[8] ?> </td>
-        <td> <?= $dados[9] ?> </td>
         </tr>
 
     <?php } ?>
