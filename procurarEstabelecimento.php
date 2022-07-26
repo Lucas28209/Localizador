@@ -19,6 +19,10 @@ $estabelecimento = $_POST['estabelecimento'];
         <th>Tipo</th>
         <th>Horário de Abertura</th>
         <th>Horário de Fechamento</th>
+        <th>Rua</th>
+        <th>Bairro</th>
+        <th>Número</th>
+        <th>Cidade</th>
         </tr>
     </thead>
 
@@ -37,6 +41,11 @@ $estabelecimento = $_POST['estabelecimento'];
         <td> <?= $dados[2] ?> </td>
         <td> <?= $dados[3] ?> </td>
         <td> <?= $dados[4] ?> </td>
+        <td> <?= $dados[5] ?> </td>
+        <td> <?= $dados[6] ?> </td>
+        <td> <?= $dados[7] ?> </td>
+        <td> <?= $dados[8] ?> </td>
+        <td> <?= $dados[9] ?> </td>
         </tr>
 
     <?php } ?>
