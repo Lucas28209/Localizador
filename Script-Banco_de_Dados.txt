@@ -1,0 +1,53 @@
+create database localizador;
+
+use localizador;
+
+create table usuario(
+	id_usuario int auto_increment,
+	tipo_usuario bool, #True para proprietário, False para cliente
+	nome_usuario char(50), 
+	senha char(50), 
+	email char(50), 
+	telefone char(50),
+	primary key (id_usuario)
+);
+
+
+create table produto(
+	nome char(50),
+	tipo char(50),
+	quantidade char(50),
+	codigo char(50),
+	preco numeric,
+	primary key (codigo), #não poder haver códigos iguais
+	foreign key (id_estabelecimento) references estabelecimento(id_estabelecimento) #produto referencia o estabelecimento
+);
+
+
+create table estabelecimento(
+	id_estabelecimento int auto_increment,
+	nome char(50),
+	tipo char(50),
+	hora_abre time,
+	hora_fecha time,
+	id_proprietario int,
+	foreign key (id_proprietario) references usuario(id_usuario) #estabelecimento referencia usuário proprietário
+	primary key (id_estabelecimento) 
+);
+
+#cadastrar endereço apenas do estabelecimento
+create table endereco(
+	id_estabelecimento int,
+	rua char(50),
+	bairro char(50),
+	numero int,
+	cidade char(50),
+	cep char(50),
+	primary key (id_estabelecimento),
+	foreign key (id_estabelecimento) references estabelecimento(id_estabelecimento)
+);
+
+SELECT produto.nome, produto.tipo, produto.quantidade, produto.codigo, produto.preco, estabelecimento.nome, endereco.rua, endereco.bairro, endereco.numero, endereco.cidade  
+FROM produto inner join estabelecimento on produto.id_estabelecimento=estabelecimento.id_estabelecimento 
+inner join endereco on estabelecimento.id_estabelecimento=endereco.id_estabelecimento
+where produto.nome='$nome' and produto.tipo='$tipo'
